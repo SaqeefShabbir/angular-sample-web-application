@@ -1,7 +1,22 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-  <div class="navbar-nav">
-    <a class="nav-item nav-link" style="cursor: pointer;" routerLink="/">Home</a>
-    <a class="nav-item nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="currentUser">
+  <a class="navbar-brand" routerLink="/">Lorem Ipsum</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
   </div>
 </nav>
 
@@ -9,3 +24,15 @@
   <!-- <alert></alert> -->
   <router-outlet></router-outlet>
 </div>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" *ngIf="currentUser">
+  <p class="col-md-4 mb-0 text-muted">© 2022 TBT Technologies</p>
+
+  <a routerLink="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+  </a>
+
+  <ul class="nav col-md-4 justify-content-end">
+    <li class="nav-item"><a class="nav-link px-2 text-muted" routerLink="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a></li>
+  </ul>
+</footer>
